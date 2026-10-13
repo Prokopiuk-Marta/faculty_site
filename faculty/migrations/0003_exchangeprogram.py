@@ -1,0 +1,34 @@
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ("faculty", "0002_fill_content"),
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name="ExchangeProgram",
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("university", models.CharField(max_length=200)),
+                ("languages", models.CharField(max_length=200)),
+                ("places", models.CharField(max_length=50)),
+                ("deadline", models.DateField()),
+                ("description", models.TextField()),
+            ],
+            options={
+                "verbose_name": "Програма обміну",
+                "verbose_name_plural": "Програми обміну",
+            },
+        ),
+    ]

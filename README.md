@@ -44,10 +44,17 @@ With the server running at `http://127.0.0.1:8000`:
 
 | URL | Behavior |
 | --- | --- |
-| http://127.0.0.1:8000/ | No application homepage; may show Django's development welcome page while `DEBUG = True` |
+| http://127.0.0.1:8000/ | Головна сторінка факультету природничих наук НаУКМА |
+| http://127.0.0.1:8000/programs/ | Список спеціальностей |
+| http://127.0.0.1:8000/programs/<id>/ | Сторінка спеціальності |
+| http://127.0.0.1:8000/departments/ | Список кафедр |
+| http://127.0.0.1:8000/departments/<id>/ | Сторінка кафедри з викладачами |
+| http://127.0.0.1:8000/exchange/ | Програми академічного обміну (`?country=Польща` для фільтра) |
 | http://127.0.0.1:8000/admin/ | Django admin, available after applying migrations |
 
-With `DEBUG = False`, unmatched URLs such as `/` return HTTP 404.
+Після `python manage.py migrate` на порожній базі сайт уже заповнений
+контентом (міграції `0002_fill_content` та `0004_add_exchange_programs`).
+Відповіді на питання з лабораторної є в [ANSWERS.md](ANSWERS.md).
 
 To create an account for admin login, run this after applying migrations:
 

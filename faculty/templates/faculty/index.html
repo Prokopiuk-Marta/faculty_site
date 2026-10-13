@@ -1,0 +1,45 @@
+{% extends "faculty/base.html" %}
+{% block content %}
+  {% if page %}
+    <section class="hero">
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.short_text }}</p>
+    </section>
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-number">{{ departments_count }}</span>
+        <span>кафедр</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">{{ programs_count }}</span>
+        <span>освітніх програм</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">{{ teachers_count }}</span>
+        <span>викладачів</span>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Про факультет</h2>
+      {{ page.about_text|linebreaks }}
+    </section>
+    <section class="card">
+      <h2>Контакти</h2>
+      <p>
+        <b>Декан:</b> {{ page.dean }}
+      </p>
+      <p>
+        <b>Адреса:</b> {{ page.address }}
+      </p>
+      <p>
+        <b>Телефон:</b> {{ page.phone }}
+      </p>
+      <p>
+        <b>Email:</b> {{ page.email }}
+      </p>
+    </section>
+  {% else %}
+    <h1>Факультет природничих наук</h1>
+    <p>Текст головної сторінки ще не додано. Його можна додати в адмінці.</p>
+  {% endif %}
+{% endblock %}
